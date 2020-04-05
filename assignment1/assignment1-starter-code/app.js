@@ -18,10 +18,16 @@ function LunchCheckController($scope) {
             return;
         }
         var totalNum = 0;
+        var totalItems = [];
         totalItems = $scope.inputs.split(',');
         for (var i = 0; i < totalItems.length; i++) {
             if (totalItems[i] != "") {
                 totalNum += 1;
+            } else {
+                $scope.message = "Please try again without empty lunch name!";
+                $scope.colorFont = "pink";
+                document.getElementById("lunch-menu").style.borderColor = "pink";
+                return;
             }
         }
 
