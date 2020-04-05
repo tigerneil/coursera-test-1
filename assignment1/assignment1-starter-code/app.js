@@ -8,7 +8,7 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
     $scope.inputs = "";
     $scope.message = "";
-    $scope.colorFont = "green";
+    $scope.colorFont = "";
 
     $scope.lunchCheck = function () {
         if ($scope.inputs == "") {
@@ -36,6 +36,7 @@ function LunchCheckController($scope) {
         } else {
             $scope.message = "Too much!";
         }
+        $scope.colorFont = "green";
         document.getElementById("lunch-menu").style.borderColor = "green";
     };
 
